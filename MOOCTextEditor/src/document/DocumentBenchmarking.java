@@ -11,6 +11,8 @@ import java.io.InputStreamReader;
  */
 
 public class DocumentBenchmarking {
+	
+	public static final int TRIALS = 100;
 
 	
 	public static void main(String [] args) {
@@ -34,7 +36,9 @@ public class DocumentBenchmarking {
 		// You can play around with this.
 		int start = 50000;
 		
-		// TODO: Fill in the rest of this method so that it runs two loops
+		System.out.print("NumberOfChars\tBasicTime\tEfficientTime\n");
+		
+		// Fill in the rest of this method so that it runs two loops
 		// and prints out timing results as described in the assignment 
 		// instructions and following the pseudocode below.
 		for (int numToCheck = start; numToCheck < numSteps*increment + start; 
@@ -58,6 +62,36 @@ public class DocumentBenchmarking {
 			 * 6. Print out the time it took to complete the loop in step 5 
 			 *      (on the same line as the first print statement) followed by a newline (\n) 
 			 */  
+			
+			System.out.print(numToCheck + "\t\t");
+			
+			String text = getStringFromFile(textfile, numToCheck);
+			
+			long basicStartTime = System.nanoTime();
+			
+			for (int i = 0; i < trials; i++) {
+				BasicDocument b = new BasicDocument(text);
+				double basicFleschScore = b.getFleschScore();
+			}
+			
+			long basicEndTime = System.nanoTime();
+			
+			double basicEstTime = (basicEndTime - basicStartTime) / 1000000000.0 / trials;
+			
+			System.out.format("%.11f\t", basicEstTime);
+			
+			long efficientStartTime = System.nanoTime();
+			
+			for (int i = 0; i < trials; i++) {
+				EfficientDocument e = new EfficientDocument(text);
+				double efficientFleschScore = e.getFleschScore();
+			}
+			
+			long efficientEndTime = System.nanoTime();
+			
+			double efficientEstTime = (efficientEndTime - efficientStartTime) / 1000000000.0 / trials;
+			
+			System.out.format("%.11f\n", efficientEstTime);
 			 
 		}
 	
