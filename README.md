@@ -4,3 +4,7 @@ Assignments for Data Structures and Performance on Coursera
 ## Week 1 : Introduction and Working with Strings
 [document.Document.java](https://github.com/akueisara/data-structures-optimizing-performance/blob/master/MOOCTextEditor/src/document/Document.java) </br>
 [document.BasicDocument.java](https://github.com/akueisara/data-structures-optimizing-performance/blob/master/MOOCTextEditor/src/document/BasicDocument.java) </br>
+
+## Week 2 : Making Flesch Score Calculation More Efficient
+[EfficientDocument.java](https://github.com/akueisara/data-structures-and-performance/blob/master/MOOCTextEditor/src/document/EfficientDocument.java) </br>
+[DocumentBenchmarking.java](https://github.com/akueisara/data-structures-and-performance/blob/master/MOOCTextEditor/src/document/DocumentBenchmarking.java) </br>
