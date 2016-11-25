@@ -1,24 +1,16 @@
 package spelling;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Set;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
 
-/** 
- * An trie data structure that implements the Dictionary and the AutoComplete ADT
- * @author You
- *
- */
-public class AutoCompleteDictionaryTrie implements Dictionary, AutoComplete {
+public class AutoCompleteMatchCase implements Dictionary, AutoComplete {
 
     private TrieNode root;
     private int size;
     
 
-    public AutoCompleteDictionaryTrie()
+    public AutoCompleteMatchCase()
 	{
 		root = new TrieNode();
 	}
@@ -41,9 +33,12 @@ public class AutoCompleteDictionaryTrie implements Dictionary, AutoComplete {
 	public boolean addWord(String word)
 	{
 	    // Implement this method.
-		String wordToAdd = word.toLowerCase();
 		TrieNode node = root;
-		for(char c: wordToAdd.toCharArray()) {
+		for (int i = 0; i < word.length(); i++) {
+			char c = word.charAt(i);
+			if (i > 0) {
+				c = Character.toLowerCase(c);
+			}
 			if (node.getValidNextCharacters().contains(c)) {
 				node = node.getChild(c);
 			} else {
@@ -75,9 +70,12 @@ public class AutoCompleteDictionaryTrie implements Dictionary, AutoComplete {
 	public boolean isWord(String s) 
 	{
 	    // Implement this method
-		String wordToFind = s.toLowerCase();
 		TrieNode node = root;
-		for (char c: wordToFind.toCharArray()) {
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (i > 0) {
+				c = Character.toLowerCase(c);
+			}
 			if (node.getValidNextCharacters().contains(c)) {
 				node = node.getChild(c);
 			} else {
@@ -127,10 +125,13 @@ public class AutoCompleteDictionaryTrie implements Dictionary, AutoComplete {
     	 //       If it is a word, add it to the completions list
     	 //       Add all of its child nodes to the back of the queue
     	 // Return the list of completions
-    	 String stem = prefix.toLowerCase();
     	 List<String> completions = new LinkedList<String>();
     	 TrieNode node = root;
-    	 for (char c: stem.toCharArray()) {
+    	 for (int i = 0; i < prefix.length(); i++) {
+  			char c = prefix.charAt(i);
+  			if (i > 0) {
+  				c = Character.toLowerCase(c);
+  			}
     		 if (node.getValidNextCharacters().contains(c)) {
  				node = node.getChild(c);
  			} else {

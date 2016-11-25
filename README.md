@@ -17,3 +17,14 @@ Assignments for Data Structures and Performance on Coursera
 [MyLinkedListTester.java](https://github.com/akueisara/data-structures-and-performance/blob/master/MOOCTextEditor/src/textgen/MyLinkedListTester.java) </br>
 ### Assignment 2: Markov Text Generation
 [MarkovTextGeneratorLoL.java](https://github.com/akueisara/data-structures-and-performance/blob/master/MOOCTextEditor/src/textgen/MarkovTextGeneratorLoL.java) </br>
+
+## Week 4: Spell Checking and Autocomplete
+### Part 1: Spell checking and more benchmarking
+[DictionaryLL.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/DictionaryLL.java) </br>
+[DictionaryBST.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/DictionaryBST.java) </br>
+### Part 2: Autocomplete
+[AutoCompleteDictionaryTrie.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/AutoCompleteDictionaryTrie.java) </br>
+### Part 3
+[AutoCompleteMatchCase.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/AutoCompleteMatchCase.java) </br>
+[DictionaryHashSetMatchCase.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/DictionaryHashSetMatchCase.java) </br>
+[AutoCompleteMatchCaseTester.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/AutoCompleteMatchCaseTester.java) </br>
