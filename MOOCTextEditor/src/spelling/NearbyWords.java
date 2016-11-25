@@ -121,6 +121,7 @@ public class NearbyWords implements SpellingSuggest {
 	   String word = "i";
 	   // Pass NearbyWords any Dictionary implementation you prefer
 	   Dictionary d = new DictionaryHashSet();
+//	   Dictionary d = new DictionaryHashSetMatchCase();
 	   DictionaryLoader.loadDictionary(d, "data/dict.txt");
 	   NearbyWords w = new NearbyWords(d);
 	   List<String> l = w.distanceOne(word, true);

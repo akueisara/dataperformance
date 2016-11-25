@@ -26,15 +26,27 @@ public class LaunchClass {
 	}
 	
     public spelling.AutoComplete getAutoComplete() {
-        spelling.AutoCompleteDictionaryTrie tr = new spelling.AutoCompleteDictionaryTrie();
+//        spelling.AutoCompleteDictionaryTrie tr = new spelling.AutoCompleteDictionaryTrie();
+    	spelling.AutoCompleteMatchCase tr = new spelling.AutoCompleteMatchCase();
         spelling.DictionaryLoader.loadDictionary(tr, dictFile);
         return tr;
     }
     
     public spelling.Dictionary getDictionary() {
-        spelling.Dictionary d = new spelling.DictionaryBST();
-        spelling.DictionaryLoader.loadDictionary(d, dictFile);
-    	return d;
+//      spelling.Dictionary d = new spelling.DictionaryBST();
+//      spelling.DictionaryLoader.loadDictionary(d, dictFile);
+//    	return d;
+    	boolean useHash = true;
+    	if (useHash) {
+            spelling.Dictionary d = new spelling.DictionaryHashSetMatchCase();
+            spelling.DictionaryLoader.loadDictionary(d, dictFile);
+            return d;
+        } else {
+            // To make this case sensitive, solution 2: check all case scenarios.
+            spelling.AutoCompleteMatchCase tr = new spelling.AutoCompleteMatchCase();
+            spelling.DictionaryLoader.loadDictionary(tr, dictFile);
+            return tr;
+        }
     }
     
     public spelling.SpellingSuggest getSpellingSuggest(spelling.Dictionary dic) {

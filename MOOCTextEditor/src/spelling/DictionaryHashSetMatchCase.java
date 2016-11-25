@@ -19,7 +19,7 @@ public class DictionaryHashSetMatchCase implements Dictionary
 	@Override
 	public boolean addWord(String word) 
 	{
-		return words.add(word.toLowerCase());
+		return words.add(word) && words.add(Character.toUpperCase(word.charAt(0)) + word.substring(1)) && words.add(word.toUpperCase());
 	}
 
 	/** Return the number of words in the dictionary */
@@ -32,7 +32,7 @@ public class DictionaryHashSetMatchCase implements Dictionary
 	/** Is this a word according to this dictionary? */
     @Override
 	public boolean isWord(String s) {
-    	return words.contains(s.toLowerCase());
+    	return words.contains(s);
 	}
 
 }

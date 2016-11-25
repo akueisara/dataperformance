@@ -26,8 +26,9 @@ public class WPTree implements WordPath {
 	// You'll need to create your own NearbyWords object here.
 	public WPTree () {
 		this.root = null;
-		// TODO initialize a NearbyWords object
-		Dictionary d = new DictionaryHashSet();
+		// initialize a NearbyWords object
+//		Dictionary d = new DictionaryHashSet();
+		Dictionary d = new DictionaryHashSetMatchCase();
 		DictionaryLoader.loadDictionary(d, "data/dict.txt");
 		this.nw = new NearbyWords(d);
 	}
