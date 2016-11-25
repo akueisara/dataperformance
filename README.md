@@ -28,3 +28,5 @@ Assignments for Data Structures and Performance on Coursera
 [AutoCompleteMatchCase.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/AutoCompleteMatchCase.java) </br>
 [DictionaryHashSetMatchCase.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/DictionaryHashSetMatchCase.java) </br>
 [AutoCompleteMatchCaseTester.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/AutoCompleteMatchCaseTester.java) </br>
+[LaunchClass.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/application/LaunchClass.java) </br>
+[AutoSpellingTextArea.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/application/AutoSpellingTextArea.java) </br>
