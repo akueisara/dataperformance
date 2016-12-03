@@ -30,3 +30,12 @@ Assignments for Data Structures and Performance on Coursera
 [AutoCompleteMatchCaseTester.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/AutoCompleteMatchCaseTester.java) </br>
 [LaunchClass.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/application/LaunchClass.java) </br>
 [AutoSpellingTextArea.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/application/AutoSpellingTextArea.java) </br>
+
+## Week 5
+### Assignment 1: Spelling Suggestions
+#### Part 1: Implement letter mutation methods in Nearby Words
+#### Part 2: Complete the method suggestions in NearbyWords
+[NearbyWords.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/NearbyWords.java) </br>
+### Assignment 2: Word Paths
+#### Part 3: Word Paths
+[WPTree.java](https://github.com/akueisara/data-structures-optimizing-performance/tree/master/MOOCTextEditor/src/spelling/WPTree.java) </br>

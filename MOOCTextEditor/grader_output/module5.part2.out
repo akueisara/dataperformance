@@ -1,0 +1,5 @@
+** Test 1: 2 suggestions... 2 suggestions returned.
+** Test 2: Checking suggestion correctness... Suggestions: dog, dogs, 
+** Test 3: 3 suggestions... 3 suggestions returned.
+** Test 4: Checking suggestion correctness... Suggestions: fire, fired, fir, 
+Tests complete. Make sure everything looks right.

@@ -7,6 +7,7 @@ package spelling;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * WPTree implements WordPath by dynamically creating a tree of words during a Breadth First
@@ -16,7 +17,10 @@ import java.util.List;
  *
  */
 public class WPTree implements WordPath {
-
+	// THRESHOLD number of words to look through for spelling suggestions (stops prohibitively long searching)
+	// For use in the Optional Optimization in Part 2
+	private static final int THRESHOLD = 1000000; 
+	
 	// this is the root node of the WPTree
 	private WPTreeNode root;
 	// used to search for nearby Words
@@ -42,8 +46,45 @@ public class WPTree implements WordPath {
 	// see method description in WordPath interface
 	public List<String> findPath(String word1, String word2) 
 	{
-	    // TODO: Implement this method.
-	    return new LinkedList<String>();
+		// initial variables
+		List<WPTreeNode> queue = new LinkedList<WPTreeNode>();     // String to explore
+		HashSet<String> visited = new HashSet<String>();   // to avoid exploring the same  
+														   // string multiple times
+
+		// Set the root to be a WPTreeNode containing word1
+		WPTreeNode root = new WPTreeNode(word1, null);
+		// Add the initial word to visited
+		visited.add(word1);
+		// Add root to the queue 
+		queue.add(root);
+		
+		// while the queue has elements and we have not yet found word2
+		while (!queue.isEmpty() && visited.size() < THRESHOLD) {
+			// remove the node from the start of the queue and assign to curr
+			WPTreeNode curr = queue.remove(0);
+			// get a list of real word neighbors (one mutation from curr's word)
+			List<String> neighbors = nw.distanceOne(curr.getWord(), true);
+			// for each n in the list of neighbors
+			for (String n : neighbors) {
+				// if n is not visited
+				if (!visited.contains(n)) {
+					// add n as a child of curr 
+					WPTreeNode child = curr.addChild(n);
+					// add n to the visited set
+					visited.add(n);
+					// add the node for n to the back of the queue
+					queue.add(child);
+					// if n is word2
+					if (n.equals(word2)) {
+						// return the path from child to root
+						return child.buildPathToRoot();
+					}
+				}
+			}
+		}
+
+		// return null as no path exists
+		return null;
 	}
 	
 	// Method to print a list of WPTreeNodes (useful for debugging)
